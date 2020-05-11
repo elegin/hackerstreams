@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/hackerstreams/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/hackerstreams/static/js/main.7078e09d.chunk.js",
-    "main.js.map": "/hackerstreams/static/js/main.7078e09d.chunk.js.map",
+    "main.js": "/hackerstreams/static/js/main.05941db8.chunk.js",
+    "main.js.map": "/hackerstreams/static/js/main.05941db8.chunk.js.map",
     "runtime-main.js": "/hackerstreams/static/js/runtime-main.c2f295a9.js",
     "runtime-main.js.map": "/hackerstreams/static/js/runtime-main.c2f295a9.js.map",
     "static/js/2.16130f25.chunk.js": "/hackerstreams/static/js/2.16130f25.chunk.js",
     "static/js/2.16130f25.chunk.js.map": "/hackerstreams/static/js/2.16130f25.chunk.js.map",
     "index.html": "/hackerstreams/index.html",
-    "precache-manifest.c0e156a6570881211f3c712b750ebc85.js": "/hackerstreams/precache-manifest.c0e156a6570881211f3c712b750ebc85.js",
+    "precache-manifest.a248a385096519f4454149db19219898.js": "/hackerstreams/precache-manifest.a248a385096519f4454149db19219898.js",
     "service-worker.js": "/hackerstreams/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/hackerstreams/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.16130f25.chunk.js.LICENSE.txt": "/hackerstreams/static/js/2.16130f25.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c2f295a9.js",
     "static/js/2.16130f25.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.7078e09d.chunk.js"
+    "static/js/main.05941db8.chunk.js"
   ]
 }

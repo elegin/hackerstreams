@@ -24,7 +24,7 @@ const Card = ({users}) => {
     
     fetchData();
   }, []);
-  
+
   return (
   <ul>
     {userData.map(name =>

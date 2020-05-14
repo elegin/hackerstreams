@@ -55,7 +55,7 @@ const Streams = ({users}) => {
               <img src={tile.logo} alt={tile.name} />
               <GridListTileBar
                 title={tile.name}
-                subtitle={<span>by: {tile.bio}</span>}
+                subtitle={<span>{tile.bio}</span>}
                  actionIcon={
                   <IconButton aria-label={`Go to ${tile.name}`} className={classes.icon}>
                     <Link  href={`https://www.twitch.tv/${tile.name}`} target="_blank"  rel="noopener noreferrer">

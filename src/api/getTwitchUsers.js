@@ -16,8 +16,6 @@ export const TWITCHERS = `
     1o57,
     secondorderchaos,
     synshop,
-    lpnoway,
-    alkalinered,
     hackingdave,
     lordsaibat
 `;

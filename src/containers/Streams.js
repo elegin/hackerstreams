@@ -38,12 +38,7 @@ const Streams = ({users}) => {
       // console.log(response);
       setUserData(response)
     });
-    setInterval(() => {
-     twitchUserData().then(function(response) {
-        console.log(response);
-        setUserData(response)
-      });
-    }, 10000);  
+ 
   }, []);   
 
 

@@ -1,23 +1,25 @@
-import axios from 'axios'
-
-
-
-
-export default {
-    getUsers: () =>
-        axios({
-            'method':'GET',
-            'url':'https://api.twitch.tv/kraken/users',
-            'headers': {
-                'Accept': 'application/vnd.twitchtv.v5+json',
-                'Client-ID': '38kka8u16jpo72tpdefcp6f5nm86kk'
-            },
-            'params': {
-                'login':'1o57,secondorderchaos,synshop,lpnoway,hackwithbourbon,alkalinered,hackingdave,lordsaibat',
-            },
-        })
-        
-}
-
+export const TWITCHERS = `
+    lady_demona,
+    golgothus,
+    yaboiiviking,
+    AlkalineRed,
+    alxrogan,
+    hackwithbourbon,
+    theblindhacker,
+    th1nk3r_is,
+    jumpsh1p,
+    alyssam_infosec,
+    lpnoway,
+    dj_ir0ngruve,
+    zephrphish,
+    elkentaro,
+    1o57,
+    secondorderchaos,
+    synshop,
+    lpnoway,
+    alkalinered,
+    hackingdave,
+    lordsaibat
+`;
 
 

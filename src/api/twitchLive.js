@@ -1,5 +1,9 @@
 import axios from 'axios'
+import * as twitchConstant from './getTwitchUsers';
+
 export const twitchUserLive = () => {
+  let noSpaceShallPass = twitchConstant.TWITCHERS.split(/\s+/).join('');
+
     return axios(
         {
           'method':'GET',
@@ -9,7 +13,7 @@ export const twitchUserLive = () => {
               'Client-ID': '38kka8u16jpo72tpdefcp6f5nm86kk'
           },
           'params': {
-              'login':'elkentaro,1o57,secondorderchaos,synshop,lpnoway,hackwithbourbon,alkalinered,hackingdave,lordsaibat',
+              'login': noSpaceShallPass
           }
         }
       )

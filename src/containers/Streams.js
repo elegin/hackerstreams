@@ -31,7 +31,9 @@ const useStyles = makeStyles((theme) => ({
 // const Streams = props => {
 const Streams = ({users}) => {
   const [userData, setUserData] = useState([]);
-   const classes = useStyles();
+  const [userIds, setUserIds] = useState([]);
+  const [userStream, setUserStream] = useState([]);
+  const classes = useStyles();
   useEffect(() => {
     const fetchData = async () => {
       const response  = await axios(
@@ -43,15 +45,59 @@ const Streams = ({users}) => {
                 'Client-ID': '38kka8u16jpo72tpdefcp6f5nm86kk'
             },
             'params': {
-                'login':'1o57,secondorderchaos,synshop,lpnoway,hackwithbourbon,alkalinered,hackingdave,lordsaibat',
+                'login':'fextralife,1o57,secondorderchaos,synshop,lpnoway,hackwithbourbon,alkalinered,hackingdave,lordsaibat',
+            }
+          }
+        )
+          setUserData(response.data.users);
+          const channelIds = response.data.users.map((data)=>{ return  data._id });
+          setUserIds(channelIds)
+          console.log(channelIds)
+
+        const res  = await axios(
+          {
+            'method':'GET',
+            'url':'https://api.twitch.tv/kraken/streams',
+            'headers': {
+                'Accept': 'application/vnd.twitchtv.v5+json',
+                'Client-ID': '38kka8u16jpo72tpdefcp6f5nm86kk'
+            },
+            'params': {
+                'channel': channelIds.toString(),
             }
           }
         );
-        setUserData(response.data.users);
-    }
+        setUserStream(res.data);
+     }   
+     
     
-    fetchData();
+    // const fetchStreams = async (userIds) => {
+    //   console.log(userIds)
+    //   const response  = await axios(
+    //       {
+    //         'method':'GET',
+    //         'url':'https://api.twitch.tv/kraken/streams',
+    //         'headers': {
+    //             'Accept': 'application/vnd.twitchtv.v5+json',
+    //             'Client-ID': '38kka8u16jpo72tpdefcp6f5nm86kk'
+    //         },
+    //         'params': {
+    //             'channel': userIds,
+    //         }
+    //       }
+    //     );
+    //     setUserStream(response.data);
+    //     console.log(response.data)
+    //  }        
+
+     fetchData()
+    // .then(
+    //   fetchStreams(userIds)
+    // );
   }, []);   
+
+
+
 
   return (
     <div className={classes.root}>
@@ -60,13 +106,13 @@ const Streams = ({users}) => {
           <ListSubheader component="div">HackerStreams</ListSubheader>
         </GridListTile>
         {userData.map((tile,index) => (
+          if(tile._id == )  
              <GridListTile key={index}>
               <img src={tile.logo} alt={tile.name} />
               <GridListTileBar
                 title={tile.name}
                 subtitle={<span>by: {tile.bio}</span>}
-                // <a href={`https://www.twitch.tv/${tile.name}`} target="_blank"  rel="noopener noreferrer"></a> 
-                actionIcon={
+                 actionIcon={
                   <IconButton aria-label={`Go to ${tile.name}`} className={classes.icon}>
                     <Link  href={`https://www.twitch.tv/${tile.name}`} target="_blank"  rel="noopener noreferrer">
                       GO
@@ -75,30 +121,11 @@ const Streams = ({users}) => {
                 }                
               />
             </GridListTile>
+
          ))}
       </GridList>
     </div>
   );
-
-
-    // return (
-    //     <div className={classes.root}>
-    //     <GridList cellHeight={180} className={classes.gridList}>
-    //       <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-    //         <ListSubheader component="div">HackerStreams</ListSubheader>
-    //       </GridListTile>
-    //       {userData.map((tile) => (
-    //         <GridListTile key={tile.name} cols={1}>
-    //           <img src={tile.logo} alt={tile.bio} />
-    //         </GridListTile>
-    //       ))}
-    //     </GridList>
-    //   </div>
-        // <div>
-        //     <h1>Streams</h1>
-        //     <Stream />
-        // </div> 
-    // );
 
 };
 

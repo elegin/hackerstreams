@@ -7,7 +7,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import Link from '@material-ui/core/Link';
 import IconButton from '@material-ui/core/IconButton';
 // import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
-import twitchUserData from '../api/twitchData';
+import twitchUserLive from '../api/twitchLive';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +34,7 @@ const Streams = ({users}) => {
   const classes = useStyles();
 
   useEffect(() => {
-    twitchUserData().then(function(response) {
+    twitchUserLive().then(function(response) {
       // console.log(response);
       setUserData(response)
     });
@@ -47,23 +47,23 @@ const Streams = ({users}) => {
     <div className={classes.root}>
       <GridList cellHeight={500} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">HackerStreams</ListSubheader>
+          <ListSubheader component="div">LIVE #HackerStreams </ListSubheader>
         </GridListTile>
         {userData.map((tile,index) => (
-             <GridListTile key={index}>
-              <img src={tile.logo} alt={tile.name} />
-              <GridListTileBar
-                title={tile.name}
-                subtitle={<span>by: {tile.bio}</span>}
-                 actionIcon={
-                  <IconButton aria-label={`Go to ${tile.name}`} className={classes.icon}>
-                    <Link  href={`https://www.twitch.tv/${tile.name}`} target="_blank"  rel="noopener noreferrer">
-                      GO
-                    </Link> 
-                  </IconButton>
-                }                
-              />
-            </GridListTile>
+            <GridListTile key={index}>
+            <img src={tile.preview.medium} alt={tile.channel.name} />
+            <GridListTileBar
+              title={tile.name}
+              subtitle={<span>by: {tile.channel.description}</span>}
+                actionIcon={
+                <IconButton aria-label={`Go to ${tile.channel.name}`} className={classes.icon}>
+                  <Link  href={`https://www.twitch.tv/${tile.channel.name}`} target="_blank"  rel="noopener noreferrer">
+                    GO
+                  </Link> 
+                </IconButton>
+              }                
+            />
+          </GridListTile>
 
          ))}
       </GridList>

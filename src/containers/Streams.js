@@ -106,7 +106,7 @@ const Streams = ({users}) => {
           <ListSubheader component="div">HackerStreams</ListSubheader>
         </GridListTile>
         {userData.map((tile,index) => (
-          if(tile._id == )  
+          // if(userStreams.includes(tile._id)){  
              <GridListTile key={index}>
               <img src={tile.logo} alt={tile.name} />
               <GridListTileBar

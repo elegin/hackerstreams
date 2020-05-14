@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/hackerstreams/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/hackerstreams/static/js/main.52b1887b.chunk.js",
-    "main.js.map": "/hackerstreams/static/js/main.52b1887b.chunk.js.map",
+    "main.js": "/hackerstreams/static/js/main.5b90f4d1.chunk.js",
+    "main.js.map": "/hackerstreams/static/js/main.5b90f4d1.chunk.js.map",
     "runtime-main.js": "/hackerstreams/static/js/runtime-main.c2f295a9.js",
     "runtime-main.js.map": "/hackerstreams/static/js/runtime-main.c2f295a9.js.map",
-    "static/js/2.a425d7eb.chunk.js": "/hackerstreams/static/js/2.a425d7eb.chunk.js",
-    "static/js/2.a425d7eb.chunk.js.map": "/hackerstreams/static/js/2.a425d7eb.chunk.js.map",
+    "static/js/2.5366cc4b.chunk.js": "/hackerstreams/static/js/2.5366cc4b.chunk.js",
+    "static/js/2.5366cc4b.chunk.js.map": "/hackerstreams/static/js/2.5366cc4b.chunk.js.map",
     "index.html": "/hackerstreams/index.html",
-    "precache-manifest.c22c8b63f6f077e743f829f2e2dd5aad.js": "/hackerstreams/precache-manifest.c22c8b63f6f077e743f829f2e2dd5aad.js",
+    "precache-manifest.3598027e382595fba7937a29e1cc8dd9.js": "/hackerstreams/precache-manifest.3598027e382595fba7937a29e1cc8dd9.js",
     "service-worker.js": "/hackerstreams/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/hackerstreams/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.a425d7eb.chunk.js.LICENSE.txt": "/hackerstreams/static/js/2.a425d7eb.chunk.js.LICENSE.txt"
+    "static/js/2.5366cc4b.chunk.js.LICENSE.txt": "/hackerstreams/static/js/2.5366cc4b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c2f295a9.js",
-    "static/js/2.a425d7eb.chunk.js",
+    "static/js/2.5366cc4b.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.52b1887b.chunk.js"
+    "static/js/main.5b90f4d1.chunk.js"
   ]
 }

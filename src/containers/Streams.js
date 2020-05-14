@@ -17,10 +17,6 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: 'gray',
   },
-  // gridList: {
-    // width: 500,
-    // height: 450,
-  // },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
   },
@@ -48,7 +44,7 @@ const Streams = ({users}) => {
     <div className={classes.root}>
       <GridList cellHeight={500} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">HackerStreams</ListSubheader>
+          <ListSubheader component="div">#HackerStreams</ListSubheader>
         </GridListTile>
         {userData.map((tile,index) => (
              <GridListTile key={index}>

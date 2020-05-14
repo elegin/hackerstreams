@@ -17,7 +17,8 @@ export const TWITCHERS = `
     secondorderchaos,
     synshop,
     hackingdave,
-    lordsaibat
+    lordsaibat,
+    spaceboyr00
 `;
 
 

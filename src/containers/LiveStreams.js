@@ -17,19 +17,20 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: 'gray',
   },
-  // gridList: {
-    // width: 500,
-    // height: 450,
-  // },
+  nolive: {
+     backgroundColor: 'black',
+  },
+  noLiveText: {
+    fontSize: '2.5em',
+    backgroundColor: 'black',
+    color: 'white'
+  },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
   },
 }));
 
-
-
-// const Streams = props => {
-const Streams = ({users}) => {
+const Streams = () => {
   const [userData, setUserData] = useState([]);
   const classes = useStyles();
 
@@ -40,18 +41,18 @@ const Streams = ({users}) => {
     });
     setInterval(() => {
       twitchUserLive().then(function(response) {
-         console.log(response);
+        //  console.log(response);
          setUserData(response)
        });
      }, 10000); 
   }, []);   
-  console.log(userData)
+  // console.log(userData)
   if(userData.length === 0){
     return (
       <div className={classes.root}>
-        No live Hackers
+        <p  className={classes.noLiveText}>No live Hackers</p>
       </div>
-    
+   
     ) 
   } else {
     return (

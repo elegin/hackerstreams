@@ -1,22 +1,7 @@
 import React , {useEffect , useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Link from '@material-ui/core/Link';
-import IconButton from '@material-ui/core/IconButton';
-// import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
 import twitchUserLive from '../api/twitchLive';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: 'gray',
-  },
+import { Grid, Card, Image, Icon } from 'semantic-ui-react';
+const useStyles = () => ({
   nolive: {
      backgroundColor: 'black',
   },
@@ -24,29 +9,31 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2.5em',
     backgroundColor: 'black',
     color: 'white'
-  },
-  icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
-  },
-}));
+  },});
 
 const Streams = () => {
   const [userData, setUserData] = useState([]);
+  const [userLinks, setUserLinks] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {
     twitchUserLive().then(function(response) {
-      // console.log(response);
+      const dl = response.map((data) => (
+        `https://www.twitch.tv/${data.channel.name}`
+      ));
+      setUserLinks(dl);
       setUserData(response)
     });
     setInterval(() => {
       twitchUserLive().then(function(response) {
-        //  console.log(response);
-         setUserData(response)
+        const dl = response.map((data) => (
+          `https://www.twitch.tv/${data.channel.name}`
+        ));
+        setUserLinks(dl);
+        setUserData(response)
        });
      }, 10000); 
   }, []);   
-  // console.log(userData)
   if(userData.length === 0){
     return (
       <div className={classes.root}>
@@ -56,30 +43,27 @@ const Streams = () => {
     ) 
   } else {
     return (
-      <div className={classes.root}>
-        <GridList cellHeight={500} className={classes.gridList}>
-          <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-            <ListSubheader component="div">LIVE #HackerStreams </ListSubheader>
-          </GridListTile>
-          {userData.map((tile,index) => (
-              <GridListTile key={index}>
-              <img src={tile.preview.medium} alt={tile.channel.name} />
-              <GridListTileBar
-                title={tile.name}
-                subtitle={<span>{tile.channel.description}</span>}
-                  actionIcon={
-                  <IconButton aria-label={`Go to ${tile.channel.name}`} className={classes.icon}>
-                    <Link  href={`https://www.twitch.tv/${tile.channel.name}`} target="_blank"  rel="noopener noreferrer">
-                      GO
-                    </Link> 
-                  </IconButton>
-                }                
-              />
-            </GridListTile>
-  
-           ))}
-        </GridList>
-      </div>
+      <Grid doubling columns={4} style={{backgroundColor: '#6441a5'}}>
+      {userData.map((card,index) => (
+          <Grid.Column key={index}>
+            <Card
+             href={userLinks[index]}
+             target="_blank"  
+             rel="noopener noreferrer"
+             >
+              <Image src={card.preview.large} wrapped ui={false} />
+              <Card.Content>
+                <Card.Header>{card.channel.name}</Card.Header>
+                <Card.Meta>{card.channel.description}</Card.Meta>
+               </Card.Content>
+               <Card.Content extra >
+                  <Icon name='user' color='red'/>
+                  LIVE
+    </Card.Content>               
+            </Card>
+        </Grid.Column>
+      ))}
+    </Grid>        
     );
   }
 

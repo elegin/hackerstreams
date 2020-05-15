@@ -4,11 +4,11 @@ import axios from 'axios'
 export const twitchUserData = () => {
   return axios({
     method: 'get',
-    url: 'https://rtfm.live/'
+    url: 'https://elegin.github.io/twitchers/'
   
   })
   .then(response => {
-      console.log(response.data)
+    
       let noSpaceShallPass = response.data.split(/\s+/).join('');
       let strArr = noSpaceShallPass.split(",");
       
@@ -47,13 +47,6 @@ export const twitchUserData = () => {
          });
 
     });
-
-
-
-
-
-   
-
  }
 
 export default twitchUserData;

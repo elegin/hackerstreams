@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b86368d983f787ff30b0ae0e68cd312b",
+    "revision": "4e08cdc5e275e4b170330a68dc9fc089",
     "url": "/hackerstreams/index.html"
   },
   {
-    "revision": "a4286e6eb8a9a7f5501c",
+    "revision": "8a9bfcb9003efbeb7c69",
     "url": "/hackerstreams/static/css/main.69eda509.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hackerstreams/static/js/2.6978dc22.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a4286e6eb8a9a7f5501c",
-    "url": "/hackerstreams/static/js/main.464cb7a6.chunk.js"
+    "revision": "8a9bfcb9003efbeb7c69",
+    "url": "/hackerstreams/static/js/main.1277fe9c.chunk.js"
   },
   {
     "revision": "59e51011568879507eab",

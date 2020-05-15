@@ -28,6 +28,8 @@ const Streams = ({users}) => {
           <Grid.Column key={index}>
             <Card
              href={userLinks[index]}
+             target="_blank"  
+             rel="noopener noreferrer"
              >
               <Image src={card.logo} wrapped ui={false} />
               <Card.Content>
@@ -38,30 +40,7 @@ const Streams = ({users}) => {
         </Grid.Column>
       ))}
     </Grid>    
-    // <div className={classes.root}>
-    //   <GridList cellHeight={500} className={classes.gridList}>
-    //     <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-    //       <ListSubheader component="div">#HackerStreams</ListSubheader>
-    //     </GridListTile>
-    //     {userData.map((tile,index) => (
-    //          <GridListTile key={index}>
-    //           <img src={tile.logo} alt={tile.name} />
-    //           <GridListTileBar
-    //             title={tile.name}
-    //             subtitle={<span>{tile.bio}</span>}
-    //              actionIcon={
-    //               <IconButton aria-label={`Go to ${tile.name}`} className={classes.icon}>
-    //                 <Link  href={`https://www.twitch.tv/${tile.name}`} target="_blank"  rel="noopener noreferrer">
-    //                   GO
-    //                 </Link> 
-    //               </IconButton>
-    //             }                
-    //           />
-    //         </GridListTile>
 
-    //      ))}
-    //   </GridList>
-    // </div>
   );
 
 };

@@ -1,9 +1,12 @@
 import axios from 'axios'
-import * as twitchConstant from './getTwitchUsers';
+
 
 export const twitchUserLive = () => {
-  let noSpaceShallPass = twitchConstant.TWITCHERS.split(/\s+/).join('');
-
+  return axios({
+    method: 'get',
+    url: 'https://elegin.github.io/twitchers/'
+  }).then(response => {
+    let noSpaceShallPass = response.data.split(/\s+/).join('');
     return axios(
         {
           'method':'GET',
@@ -37,6 +40,8 @@ export const twitchUserLive = () => {
           return response.data.streams
         })
       });
+  
+  })  
          
 
 }

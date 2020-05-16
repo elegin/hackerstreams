@@ -10,8 +10,8 @@ const App = props => {
    document.head.appendChild(styleLink);
    return (
      <div >
-         
          <LiveStreams />
+         <Divider />
          <Divider />
          <Streams />
       </div> 
